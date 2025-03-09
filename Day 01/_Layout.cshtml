@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+        @RenderSection("Style",false)
+</head>
+
+<body class="bg-light">
+    <header class="container w-75 p-3">
+        <h1 class="fs-3">
+            MVC Day Uno
+        </h1>
+    </header>
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav w-75 container justify-content-evenly">
+                <li class="nav-item"><a href="#" class="nav-link ms-5 active">Blog</a></li>
+                <li class="nav-item"><a href="#" class="nav-link ms-5">About</a></li>
+                <li class="nav-item"><a href="#" class="nav-link ms-5">Archives</a></li>
+                <li class="nav-item"><a href="#" class="nav-link ms-5">Contact</a></li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link ms-5">
+                        <i class="bi bi-rss-fill text-warning"></i> Subscribe
+                        via. RSS
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+    <div class="container">
+        @RenderBody()
+    </div>
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>About</h3>
+                    <p class="offset-1">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco <a href="#" class="text-white text-decoration-underline">laboris nisi ut aliquip</a>
+                        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                        sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+
+                <div class="col-md-4">
+                    <h3>Blogroll</h3>
+                    <ul class="list-unstyled offset-1">
+                        <li><a href="#" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover">NETTUTS+</a></li>
+                        <li><a href="#" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover">FreelanceSwitch</a></li>
+                        <li><a href="#" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover">In The Woods</a></li>
+                        <li><a href="#" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover">Netsetter</a></li>
+                        <li><a href="#" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover">PSDTUTS+</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <h3>Popular</h3>
+                    <ul class="list-unstyled offset-1">
+                        <li><a href="#" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover">This is the title of a blog post</a></li>
+                        <li><a href="#" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover">Lorem ipsum dolor sit amet</a></li>
+                        <li><a href="#" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover">Consectetur adipisicing elit, sed do eiusmod</a></li>
+                        <li><a href="#" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover">Duis aute irure dolor</a></li>
+                        <li><a href="#" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover">Excepteur sint occaecat cupidatat</a></li>
+                        <li><a href="#" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover">Reprehenderit in voluptate velit</a></li>
+                        <li><a href="#" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover">Officia deserunt mollit anim id est laborum</a></li>
+                        <li><a href="#" class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover">Lorem ipsum dolor sit amet</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</html>

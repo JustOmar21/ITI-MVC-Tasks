@@ -1,0 +1,88 @@
+﻿<div class="row">
+
+    <img src="" />
+    <form method="get" class="col-md-6">
+        <div class=" p-3 bg-warning bg-opacity-75">
+            <div class="mb-3">
+                <label for="bgImage" class="form-label">Choose a background image:</label>
+                <select id="bgImage" name="bgImage" class="form-select">
+                    <option value="0.jpg">1</option>
+                    <option value="1.jpg">2</option>
+                    <option value="2.jpg">3</option>
+                    <option value="3.jpg">4</option>
+                    <option value="4.jpg">5</option>
+                    <option value="5.jpg">6</option>
+                    <option value="6.jpg">7</option>
+                    <option value="7.jpg">8</option>
+                    <option value="8.jpg">9</option>
+                    <option value="9.jpg">10</option>
+                    <option value="10.jpg">11</option>
+                    <option value="11.jpg">12</option>
+                </select>
+            </div>
+            <div class="mb-3 border-bottom">
+                <label for="fontColor" class="form-label">Choose a font color:</label>
+                <select id="fontColor" name="fontColor" class="form-select">
+                    <option value="black">Black</option>
+                    <option value="purple">Purple</option>
+                    <option value="hotpink">HotPink</option>
+                    <option value="gray">Gray</option>
+                    <option value="teal">Teal</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Choose a greeting Type:</label>
+                <div>
+                    <input type="radio" id="birthday" name="greetingType" value="Birthday" class="form-check-input">
+                    <label for="birthday" class="form-check-label">Birthday</label>
+                </div>
+                <div>
+                    <input type="radio" id="getWell" name="greetingType" value="Get Well Soon" class="form-check-input">
+                    <label for="getWell" class="form-check-label">Get Well Soon</label>
+                </div>
+                <div>
+                    <input type="radio" id="valentine" name="greetingType" value="Valentine" class="form-check-input">
+                    <label for="valentine" class="form-check-label">Valentine</label>
+                </div>
+                <div>
+                    <input type="radio" id="congrats" name="greetingType" value="Congrats" class="form-check-input">
+                    <label for="congrats" class="form-check-label">Congrats</label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <input type="checkbox" id="addPicture" name="addPicture" class="form-check-input">
+                <label for="addPicture" class="form-check-label">Add the Picture</label>
+            </div>
+            <div class="mb-3">
+                <label for="greetingMessage" class="form-label">Enter the greeting Message below:</label>
+                <input type="text" id="greetingMessage" name="greetingMessage" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-secondary">Preview</button>
+        </div>
+    </form>
+
+
+    <div class="col-md-6 bg-light" style="height: 500px;">
+        <div class="cardMake d-flex flex-column justify-content-around   h-100">
+            @if (Request["greetingType"] == "Birthday") { <p class="flex-grow-1">Happy Birthday !!!</p> }
+            @if (Request["greetingType"] == "Get Well Soon") { <p class="flex-grow-1">Get Well Soon</p> }
+            @if (Request["greetingType"] == "Valentine") { <p class="flex-grow-1">Happy Valentine !!!</p> }
+            @if (Request["greetingType"] == "Congrats") { <p class="flex-grow-1">Congratulations !!!</p> }
+            @if (Request["addPicture"] == "on")
+            {<img width="200" height="200" class="mx-auto" src="~/images/bd.jpg"/>}
+            <p class="overflow-hidden">@Request["greetingMessage"]</p>
+        </div>
+    </div>
+
+    @section Style {
+        <style>
+            .cardMake{
+                background-image: url("/backgrounds/@Request["bgImage"]");
+                color: @Request["fontColor"];
+                text-align: center;
+                font-size: 45px;
+                font-weight: 500;
+            }
+        </style>
+    }
+</div>

@@ -1,0 +1,37 @@
+﻿<form action="#" method="get" class="py-4">
+    <h3 class="py-3">
+        Post a comment
+    </h3>
+    <div class="row mb-3">
+        <label for="name" class="col-12 col-lg-2 col-form-label">Name</label>
+        <div class="col-12 col-lg-10">
+            <input name="name" id="name" type="text" class="form-control" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="birth" class="col-12 col-lg-2 col-form-label">Birthday</label>
+        <div class="col-12 col-lg-10">
+            <input name="birth" id="birth" type="date" class="form-control" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="grad" class="col-12 col-lg-2 form-check-label">Is Graduated ?</label>
+        <div class="col-12 col-lg-10">
+            <input name="grad" id="grad" type="checkbox" class="form-check-input" />
+        </div>
+    </div>
+
+    <div>
+        <input type="submit" value="Go" class="btn btn-primary" />
+    </div>
+
+</form>
+
+
+<div class="p-4">
+    @if (!Request["name"].IsEmpty()) { <p class="text-danger">Hello @Request["name"]</p> }
+    @if (!Request["birth"].IsEmpty()) { <p class="text-primary">Your Birthday is @Request["birth"]</p> }
+    @if (!Request["grad"].IsEmpty() && Request["grad"] == "on") { <p>YESSSSS, Am Graduated</p> }
+</div>
