@@ -1,0 +1,23 @@
+﻿@model Car
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Car Details</h2>
+<p><strong>@Html.DisplayNameFor(model => model.ID):</strong> @Html.DisplayFor(model => model.ID)</p>
+<p><strong>@Html.DisplayNameFor(model => model.Manfacture):</strong> @Html.DisplayFor(model => model.Manfacture)</p>
+<p><strong>@Html.DisplayNameFor(model => model.Model):</strong> @Html.DisplayFor(model => model.Model)</p>
+<p><strong>@Html.DisplayNameFor(model => model.Color):</strong> @Html.DisplayFor(model => model.Color)</p>
+
+@Html.Raw(CreateBack())
+
+
+@functions {
+    string CreateBack()
+    {
+        return "<a href='/Car/Index' class='btn btn-secondary'>Cancel</a>";
+    }
+    
+}
+
+

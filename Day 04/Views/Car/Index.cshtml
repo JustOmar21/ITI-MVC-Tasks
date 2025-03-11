@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Car>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Car List</h1>
+
+@Html.ActionLink("Create", "Add", new { }, new { @class = "btn btn-outline-primary" })
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.ID)</th>
+            <th>@Html.DisplayNameFor(model => model.Manfacture)</th>
+            <th>@Html.DisplayNameFor(model => model.Model)</th>
+            <th>@Html.DisplayNameFor(model => model.Color)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var car in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(model => car.ID)</td>
+                <td>@Html.DisplayFor(model => car.Manfacture)</td>
+                <td>@Html.DisplayFor(model => car.Model)</td>
+                <td>@Html.DisplayFor(model => car.Color)</td>
+                <td>
+                    @Html.ActionLink("Update", "Update", new { id = car.ID }, new { @class = "btn btn-success btn-sm" })
+                    @Html.ActionLink("Details", "Details", new { id = car.ID }, new { @class = "btn btn-info text-light btn-sm" })
+                    @Html.ActionLink("Delete", "Delete", new { id = car.ID }, new { @class = "btn btn-danger btn-sm" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

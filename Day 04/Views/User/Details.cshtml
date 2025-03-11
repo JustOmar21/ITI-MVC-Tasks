@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewData["Title"] = "Details";
+    var user = ViewBag.User as User;
+}
+
+<h1>User's Details</h1>
+
+<p><strong>Your ID is:</strong> @user.ID</p>
+<p><strong>Your Name is:</strong> @user.Name</p>
+<img src="~/Task/ImageAssignment/images/@user.ImageChoice" width="400" height="400">
+<br />
+<a href="/User" class="btn btn-secondary">Back</a>
+
