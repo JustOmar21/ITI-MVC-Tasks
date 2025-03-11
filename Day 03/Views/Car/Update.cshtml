@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Update";
+    var car = ViewBag.Car as Car;
+}
+
+<form action="/Car/Update" method="post">
+
+    <div class="mb-3">
+        <label for="ID" class="form-label">ID</label>
+        <input type="text" class="form-control" id="ID" name="ID" value="@car.ID" readonly>
+    </div>
+
+    <div class="mb-3">
+        <label for="Manfacture" class="form-label">Manufacture</label>
+        <input type="text" class="form-control" id="Manfacture" name="Manfacture" value="@car.Manfacture">
+    </div>
+
+    <div class="mb-3">
+        <label for="Model" class="form-label">Model</label>
+        <input type="text" class="form-control" id="Model" name="Model" value="@car.Model">
+    </div>
+
+    <div class="mb-3">
+        <label for="Color" class="form-label">Color</label>
+        <input type="text" class="form-control" id="Color" name="Color" value="@car.Color">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update Car</button>
+    <a href="/Car/Index" class="btn btn-secondary">Cancel</a>
+</form>

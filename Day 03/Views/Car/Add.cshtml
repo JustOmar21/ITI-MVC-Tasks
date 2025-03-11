@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h2>Add a New Car</h2>
+
+<form action="/Car/Add" method="post">
+
+    <div class="mb-3">
+        <label for="Manfacture" class="form-label">ID</label>
+        <input type="text" class="form-control" id="ID" name="ID">
+    </div>
+
+    <div class="mb-3">
+        <label for="Manfacture" class="form-label">Manufacture</label>
+        <input type="text" class="form-control" id="Manfacture" name="Manfacture">
+    </div>
+
+    <div class="mb-3">
+        <label for="Model" class="form-label">Model</label>
+        <input type="text" class="form-control" id="Model" name="Model">
+    </div>
+
+    <div class="mb-3">
+        <label for="Color" class="form-label">Color</label>
+        <input type="text" class="form-control" id="Color" name="Color">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Car</button>
+    <a href="/Car/Index" class="btn btn-secondary">Cancel</a>
+</form>
+

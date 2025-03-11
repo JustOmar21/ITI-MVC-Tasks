@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    var cars = ViewBag.Cars as List<Car>;
+}
+
+<h1>Car List</h1>
+
+<a href="/Car/Add" class="btn btn-outline-primary">Create</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Manufacturer</th>
+            <th>Model</th>
+            <th>Color</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var car in cars)
+        {
+            <tr>
+                <td>@car.ID</td>
+                <td>@car.Manfacture</td>
+                <td>@car.Model</td>
+                <td>@car.Color</td>
+                <td>
+                    <a href="/Car/Update/@car.ID" class="btn btn-success btn-sm">Update</a>
+                    <a href="/Car/@car.ID" class="btn btn-info text-light btn-sm">Details</a>
+                    <a href="/Car/Delete/@car.ID" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
