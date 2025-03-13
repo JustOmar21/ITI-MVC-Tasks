@@ -1,0 +1,43 @@
+1. Create MVC webApp using EF Core, which manages Customers and their Orders, "It is 1:M relationship (1 Customer -> Many Orders)"
+
+	
+		* Customer controller , Order controller
+		
+		* Implement all CRUD operations to be able to manage your Clients 
+		
+		* Implement all CRUD operations to manage your Client's orders
+
+		* Create any custom DataAnnotation, and apply it on your classes
+
+
+	- Apply client-side & server-side validation 
+	
+	- Post/Edit methods should be tested for validation using (ModelState.IsValid) , 
+		(Display ValidationSummary for all occurred errors)
+
+
+	* Search: "Implement Search for specific customer's orders"
+		Add "Customer dropdown list" to the top of Order's Index View, 
+		to list all Orders done by Customer
+
+
+Customer should have the following properties:
+- ID
+- Name
+- Gender
+- Email
+- PhoneNum
+- IEnumrable<Order>? Orders --> Nullable
+
+
+Order should have the following properties:
+- ID
+- Date
+- TotalPrice
+[ForeignKey("Customer")]
+- CustID
+- Customer? Customer
+
+
+** Apply all necessary DataAnnotation on your classes
+*** It is 1:M relationship (1 Customer -> Many Orders)
