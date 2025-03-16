@@ -7,15 +7,17 @@ namespace Day_05.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IWebHostEnvironment env;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IWebHostEnvironment env)
         {
             _logger = logger;
+            this.env = env;
         }
 
         public IActionResult Index()
         {
-            return View();
+            return View(env);
         }
 
         public IActionResult Privacy()

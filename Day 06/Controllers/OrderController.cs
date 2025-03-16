@@ -11,7 +11,9 @@ namespace Day_06.Controllers
 {
     public class OrderController : Controller
     {
-        StoreContext context = new StoreContext();
+        StoreContext context;
+
+        public OrderController(StoreContext context) => this.context = context;
 
         public IActionResult Index()
         {

@@ -8,9 +8,14 @@ namespace Day_06.Models
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Order> Orders { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+
+        public StoreContext(DbContextOptions<StoreContext> options) : base(options)
         {
-            optionsBuilder.UseSqlServer("Server=.;Database=StoreMVCTask;Trusted_Connection=True;Encrypt=false;");
+
         }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer("Server=.;Database=StoreMVCTask;Trusted_Connection=True;Encrypt=false;");
+        //}
     }
 }

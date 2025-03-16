@@ -1,3 +1,6 @@
+using Day_06.Models;
+using Microsoft.EntityFrameworkCore;
+
 namespace Day_06
 {
     public class Program
@@ -9,13 +12,20 @@ namespace Day_06
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddDbContext<StoreContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
+                //app.UseDeveloperExceptionPage();
+
             }
+
             app.UseRouting();
 
             app.UseAuthorization();

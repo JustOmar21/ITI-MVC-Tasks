@@ -10,13 +10,12 @@ namespace Day_06.CustomValidation
             if(value is string email)
             {
                 email = email.Trim();
-                using(var context = new StoreContext())
-                {
-                    ErrorMessage = $"";
-                    var instance = validationContext.ObjectInstance as Customer;
-                    var result = !context.Customers.Any(c => c.Email == email && c.ID != instance.ID) ;
-                    return result ? ValidationResult.Success : new ValidationResult($"Email - {email} - is already taken");
-                }
+                var context = validationContext.GetService<StoreContext>();
+
+                ErrorMessage = $"";
+                var instance = validationContext.ObjectInstance as Customer;
+                var result = !context.Customers.Any(c => c.Email == email && c.ID != instance.ID) ;
+                return result ? ValidationResult.Success : new ValidationResult($"Email - {email} - is already taken");
             }
             else
             {

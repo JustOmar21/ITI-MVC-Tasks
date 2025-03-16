@@ -1,6 +1,13 @@
-﻿@{
+﻿@model IWebHostEnvironment;
+@inject IConfiguration config;
+@{
     ViewData["Title"] = "Home Page";
 }
+
+
+
+<div class="container">@config["ConnectionStrings:DefaultConnection"]</div>
+<div class="container">@Model.ApplicationName</div>
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
